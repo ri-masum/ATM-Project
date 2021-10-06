@@ -9,17 +9,17 @@ public class Account {
     private int customerNumber;
 
 
-    //to set cumstomer number
+    // set cumstomer number
     public int setcumtomerNumner(int customerNumber){
         this.customerNumber=customerNumber;
         return customerNumber;
 
     }
-    //to get customer number
+    // get customer number
     public int getCustomerNumber(){
         return customerNumber;
     }
-    //to set the pin number
+    // set the pin number
     public int setPinNumber(int pinNumber);
 
     {

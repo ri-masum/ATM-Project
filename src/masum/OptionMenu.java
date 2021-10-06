@@ -24,11 +24,12 @@ public class OptionMenu extends Account{
                 catch(Exception e){
                     System.out.println("/n" + "Invalid character(s). Only numbers."+"/n");
                     x=2;
-                    for (Entry<Integer ,Integer> entry : data.entrySet()){
-                        if (entry.getKey ())
-
-
+                    for (Entry<Integer ,Integer> entry : data.entrySet()) {
+                        if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNum)
+                            getAccountType();
                     }
+                    }
+                System.out.println();
 
                 }
 

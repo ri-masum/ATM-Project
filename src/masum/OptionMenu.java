@@ -25,7 +25,7 @@ public class OptionMenu extends Account{
                     System.out.println("/n" + "Invalid character(s). Only numbers." + "/n");
                     x = 2;
                     for (Entry<Integer, Integer> entry : data.entrySet()) {
-                        if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNum)
+                        if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber()
                             getAccountType();
                     }
                 }
@@ -34,12 +34,14 @@ public class OptionMenu extends Account{
             } while (x == 1) ;
         }
         /*display account type menu with selection*/
+
         public void getAcoountType.nextInt();
         System.out.println("Secelet the Account you want ot access:");
         System.out.println("Type 1-Checking Account");
         System.out.println("Type 2-Saving Account");
         System.out.println("Type 3- Exit ");
         selection = menuInput.nextInt();
+
         switch (selection) {
             case 1:
                 getChacking();
@@ -56,6 +58,7 @@ public class OptionMenu extends Account{
         }
     }
      /*display Chacking account menu with selections*/
+
     public void getChacking(){
         System.out.println("Chacking Account");
         System.out.println("Type 1- View Balance");
@@ -64,6 +67,7 @@ public class OptionMenu extends Account{
         System.out.println("Type 4- Exit");
         System.out.println("Choice: ");
         selection =menuInput.nextInt();
+
         switch (selection){
             case 1:
                 System.out.println("Chacking Account Balance : "+moneyformat.format(getChacking();

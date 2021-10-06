@@ -72,6 +72,16 @@ public class Account {
         savingBalance = (savingBalance + amount);
         return savingBalance;
     }
+    /*Customer Checking Account Withdraw Input*/
+    public  void getCheckingWithdrawInput(){
+        System.out.println("Checking Account Balance : "+moneyFormat.format(checkingBalance));
+        System.out.println("Ammount you want to withdraw from Checking Account :");
+        double ammount =input.nextDouble();
+        if ((checkingBalance- ammount)>=0){
+            calcCheckingWithdraw(ammount);
+            System.out.println("New checking account balance:"+moneyFormat.format(check));
+        }
+    }
 
     
 

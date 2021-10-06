@@ -39,7 +39,7 @@ public class OptionMenu extends Account{
         System.out.println("Type 1-Checking Account");
         System.out.println("Type 2-Saving Account");
         System.out.println("Type 3- Exit ");
-        selection = menuInput, nextInt();
+        selection = menuInput.nextInt();
         switch (selection) {
             case 1:
                 getChacking();

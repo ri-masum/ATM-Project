@@ -27,6 +27,13 @@ public class Account {
         return pinNumber;
 
     }
+    /*get the pin number*/
+    public double getSavingBalance(){
+        return savingBalance;
+
+    }
+    /*calculate checking Account withdrawal*/
+
 
 
 }

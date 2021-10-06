@@ -22,8 +22,9 @@ public class Account {
     }
 
     //set the pin number
-    public int setPinNumber(int pinNumber);{
-        this.pinNumber = pinNumber;
+    public int setPinNumber(int pinNumber);
+    {
+        this.pinNumber=pinNumber;
         return pinNumber;
     }
 
@@ -76,12 +77,16 @@ public class Account {
     public  void getCheckingWithdrawInput(){
         System.out.println("Checking Account Balance : "+moneyFormat.format(checkingBalance));
         System.out.println("Ammount you want to withdraw from Checking Account :");
-        double ammount =input.nextDouble();
-        if ((checkingBalance- ammount)>=0){
-            calcCheckingWithdraw(ammount);
-            System.out.println("New checking account balance:"+moneyFormat.format(check));
+        double amount =input.nextDouble();
+        if ((checkingBalance- amount)>=0){
+            calcCheckingWithdraw(amount);
+            System.out.println("New checking account balance:"+moneyFormat.format(checkingWithdraw));
+
+        }else{
+            System.out.println("Balance can not be negetive.");
         }
     }
+    /*Customer Saving Account Deposite Input*/
 
     
 

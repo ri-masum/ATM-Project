@@ -1,5 +1,4 @@
 package masum;
-//main class
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -11,7 +10,7 @@ public class OptionMenu extends Account{
     DecimalFormat moneyformat =new DecimalFormat("'$'###,##0.00");
     HashMap<Integer ,Integer> data =new HashMap<Integer, Integer>();
     /*validate login information customer number and pin number */
-    public void  getLogin() throws IOException{
+    public void  getLogin() throws IOException {
         int x=1;
         do{
             try {
@@ -25,8 +24,14 @@ public class OptionMenu extends Account{
                 catch(Exception e){
                     System.out.println("/n" + "Invalid character(s). Only numbers."+"/n");
                     x=2;
+                    for (Entry<Integer ,Integer> entry : data.entrySet()){
+                        if (entry.getKey ())
+
+
+                    }
 
                 }
+
 
 
             }

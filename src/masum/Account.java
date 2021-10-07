@@ -6,7 +6,7 @@ public class Account {
 
     Scanner input =new Scanner(System.in);
     DecimalFormat moneyFormat=new DecimalFormat("'$'###.##0.00");
-    private int customerNumber;
+    public int customerNumber;
 
 
     //set cumstomer number
@@ -22,7 +22,8 @@ public class Account {
     }
 
     //set the pin number
-    public int setPinNumber(int pinNumber);{
+    public int setPinNumber(int pinNumber)
+    {
         this.pinNumber = pinNumber;
         return pinNumber;
     }
@@ -47,7 +48,7 @@ public class Account {
 
     /*calculate checking Account withdrawal*/
 
-    public double calcSavingWithdraw(double amount) {
+    public double calcCheckingWithdraw(double amount) {
         checkingBalance = (checkingBalance - amount);
         return checkingBalance;
     }
@@ -133,10 +134,11 @@ public void getCheckingDepositInput() {
         }
     }
 
-    private  int customerNumber;
+    private int customerNumber;
     private  int pinNumber;
     private double checkingBalance = 0;
     private double savingBalance = 0;
 }
+
 
 

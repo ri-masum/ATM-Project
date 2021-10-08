@@ -20,8 +20,11 @@ public class OptionMenu extends Account{
         int x = 1;
 
         do {
-            try {
+            try
                 {
+                    /*
+                    * Account Keys */
+
                     data.put(2012020116,116);
                     data.put(2012020107,107);
                     data.put(2012020133,133);
@@ -30,13 +33,17 @@ public class OptionMenu extends Account{
 
                     System.out.println("Enter your Customer number : ");
                     setcumtomerNumner(menuInput.nextInt());
-                }catch (Exception e)
-                {
+                    System.out.println("Enter Your Pin number: ");
+                    setPinNumber(menuInput.nextInt());
+                }catch (Exception e){
+
                     System.out.println("\n" + "Invalid character(s). Only numbers." + "\n");
-                    x = 2;
+                    x = 2;}
+
 
                     for (Map.Entry<Integer, Integer> entry : data.entrySet()) {
-                        if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber()
+                        if (entry.getKey() == getCustomerNumber() && entry.getValue() == getPinNumber())
+                        {
                         getAccountType();
                     }
                 }
@@ -46,8 +53,8 @@ public class OptionMenu extends Account{
         }
         /*display account type menu with selection*/
 
-        public void getAccountType();{
-        System.out.println("Secelet the Account you want ot access:");
+        public void getAccountType(){
+        System.out.println("Select the Account you want ot access:");
         System.out.println("Type 1-Checking Account");
         System.out.println("Type 2-Saving Account");
         System.out.println("Type 3- Exit ");
@@ -68,8 +75,11 @@ public class OptionMenu extends Account{
                 getAccountType();
         }
         }
-    }
-     /*display Chacking account menu with selections*/
+
+
+    //private void getAccountType()// new line added ...add comment line just in case show any error
+
+    /*display Chacking account menu with selections*/
 
     public void getChacking(){
         System.out.println("Chacking Account");
@@ -82,7 +92,7 @@ public class OptionMenu extends Account{
 
         switch (selection){
             case 1:
-                System.out.println("Chacking Account Balance : "+moneyformat.format(getChacking();
+                System.out.println("Chacking Account Balance : "+moneyformat.format(getCheckingBalance())+"\n");
                 getAccountType();
                 break;
             case 2:
@@ -90,7 +100,7 @@ public class OptionMenu extends Account{
                 getAccountType();
                 break;
             case 3:
-                getCheckingDepositeInput();
+                getCheckingDepositInput();
                 getAccountType();
                 break;
             case 4:
@@ -114,7 +124,7 @@ public class OptionMenu extends Account{
         selection =menuInput.nextInt();
         switch (selection){
             case 1:
-                System.out.println("Saving Account Balance :"+moneyformat.format(getSavingBalance());
+                System.out.println("Saving Account Balance :"+moneyformat.format(getSavingBalance())+"\n");
                 getAccountType();
                 break;
             case 2:
@@ -122,7 +132,7 @@ public class OptionMenu extends Account{
                 getAccountType();
                 break;
             case 3:
-                getSavingDepositeInput();
+                getSavingDepositInput();
                 getAccountType();
                 break;
             case 4:

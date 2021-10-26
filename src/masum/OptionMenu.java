@@ -3,6 +3,7 @@ package masum;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class OptionMenu extends Account{
 
     Scanner menuInput= new Scanner(System.in);
 
-    DecimalFormat moneyFormat =new DecimalFormat("'$'###,##0.00");
+    DecimalFormat moneyFormat =new DecimalFormat("'$'###.00");
 
     HashMap<Integer ,Integer> data = new HashMap<>();
 

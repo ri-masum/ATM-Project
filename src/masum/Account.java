@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Account {
 
     Scanner input =new Scanner(System.in);
-    DecimalFormat moneyFormat=new DecimalFormat("'$'###.##0.00");
+    DecimalFormat moneyFormat=new DecimalFormat("'$'###");
 
 
 

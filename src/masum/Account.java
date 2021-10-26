@@ -9,8 +9,8 @@ public class Account {
 
 
 
-    //set cumstomer number
-    public int setcumtomerNumner(int customerNumber){
+    //set Customer number
+    public int setCustomerNumber(int customerNumber){
         this.customerNumber=customerNumber;
         return customerNumber;
 

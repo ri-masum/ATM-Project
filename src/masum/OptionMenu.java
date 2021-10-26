@@ -2,21 +2,22 @@ package masum;
 /*main class*/
 
 import java.io.IOException;
-import java.security.KeyStore;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class OptionMenu extends Account{
+
     Scanner menuInput= new Scanner(System.in);
-    DecimalFormat moneyformat =new DecimalFormat("'$'###,##0.00");
 
-    HashMap<Integer ,Integer> data =new HashMap<Integer, Integer>();
+    DecimalFormat moneyFormat =new DecimalFormat("'$'###,##0.00");
 
-    /*validate login information customer number and pin number */
+    HashMap<Integer ,Integer> data = new HashMap<>();
 
-    public void  getLogin() throws IOException {
+    /*validate login information customer number and Pin Number */
+
+    public void  getLogin()  {
         int x = 1;
 
         do {
@@ -32,12 +33,13 @@ public class OptionMenu extends Account{
                     System.out.println("Welcome to ATM Project|");
 
                     System.out.println("Enter your Customer number : ");
-                    setcumtomerNumner(menuInput.nextInt());
+                    setCustomerNumber(menuInput.nextInt());
                     System.out.println("Enter Your Pin number: ");
                     setPinNumber(menuInput.nextInt());
-                }catch (Exception e){
+                    
+                }catch (IllegalArgumentException e){
 
-                    System.out.println("\n" + "Invalid character(s). Only numbers." + "\n");
+                    System.out.println("\n" + "Invalid character(s). Only numbers.\n");
                     x = 2;}
 
 
@@ -60,39 +62,34 @@ public class OptionMenu extends Account{
         System.out.println("Type 3- Exit ");
         selection = menuInput.nextInt();
 
-        switch (selection) {
-            case 1:
-                getChacking();
-                break;
-            case 2:
-                getSaving();
-                break;
-            case 3:
-                System.out.println("thankyou for using this ATM, Bye.");
-                break;
-            default:
-                System.out.println("\n" + "Invalid Choice." + "\n");
-                getAccountType();
-        }
+            switch (selection) {
+                case 1 -> getChecking();
+                case 2 -> getSaving();
+                case 3 -> System.out.println("ThankYou for using this ATM, Bye.");
+                default -> {
+                    System.out.println("\n" + "Invalid Choice." + "\n");
+                    getAccountType();
+                }
+            }
         }
 
 
     //private void getAccountType()// new line added ...add comment line just in case show any error
 
-    /*display Chacking account menu with selections*/
+    /*display Checking account menu with selections*/
 
-    public void getChacking(){
-        System.out.println("Chacking Account");
+    public void getChecking(){
+        System.out.println("Checking Account");
         System.out.println("Type 1- View Balance");
         System.out.println("Type 2- Withdraw Funds");
-        System.out.println("Type 3- Deposite Funds");
+        System.out.println("Type 3- Deposit Funds");
         System.out.println("Type 4- Exit");
         System.out.println("Choice: ");
         selection =menuInput.nextInt();
 
         switch (selection){
             case 1:
-                System.out.println("Chacking Account Balance : "+moneyformat.format(getCheckingBalance())+"\n");
+                System.out.println("Checking Account Balance : "+moneyFormat.format(getCheckingBalance())+"\n");
                 getAccountType();
                 break;
             case 2:
@@ -107,7 +104,7 @@ public class OptionMenu extends Account{
                 System.out.println("Thanking for using ATM. Bye");
             default:
                 System.out.println("\n"+"Invalid Choice "+"\n");
-                getChacking();
+                getChecking();
         }
 
         }
@@ -118,13 +115,13 @@ public class OptionMenu extends Account{
         System.out.println("Type 1- View Balance");
         System.out.println("Type 1- View Balance");
         System.out.println("Type 2- Withdraw Funds");
-        System.out.println("Type 3- Deposite Funds");
+        System.out.println("Type 3- Deposit Funds");
         System.out.println("Type 4- Exit");
         System.out.println("Choice: ");
         selection =menuInput.nextInt();
         switch (selection){
             case 1:
-                System.out.println("Saving Account Balance :"+moneyformat.format(getSavingBalance())+"\n");
+                System.out.println("Saving Account Balance :"+moneyFormat.format(getSavingBalance())+"\n");
                 getAccountType();
                 break;
             case 2:
@@ -139,7 +136,10 @@ public class OptionMenu extends Account{
                 System.out.println("Thank You for using this ATM.");
                 break;
             default:
-                System.out.println("\n"+"Invalid Choice."+"\n");
+                System.out.println("""
+
+                        Invalid Choice.
+                        """);
                 getSaving();
             }
         }
